@@ -34,5 +34,11 @@
  */
 function Main ()
 {
+	log(MODE_NAME_LONG + " (version " + MODE_VERSION + ") initialized.", LOG_SUCCESS);
 	return true;
 }
+
+/*	TODO:
+ *	-Replace with event later
+ */
+Main()

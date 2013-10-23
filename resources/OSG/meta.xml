@@ -1,8 +1,6 @@
 <meta>     
-	<!-- Load the Includes -->
 	<script src="Include/Constants.nut" />
 	<script src="Include/Hooks.nut" />
 
-	<!-- Main -->
 	<script src="Main.nut" />
 </meta>

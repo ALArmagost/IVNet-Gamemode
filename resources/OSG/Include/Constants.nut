@@ -25,4 +25,10 @@ const MODE_NAME_SHORT			=	"OSG";
 const MODE_NAME_LONG			=	"IV:Net Gamemode (OSG)";
 const MODE_VERSION				=	"0.01";
 
-const DEBUG_MODE				=	true;
+const DEBUG_MODE				=	1;
+
+const LOG_INFO					=	0;
+const LOG_WARNING				=	1;
+const LOG_ERROR					=	2;
+const LOG_SUCCESS				=	3;
+const LOG_NOPREFIX				=	4;
