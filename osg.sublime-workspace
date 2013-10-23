@@ -1,0 +1,524 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Card",
+				"CardinalInterface"
+			],
+			[
+				"bAs",
+				"bAsString"
+			],
+			[
+				"iTempM",
+				"iTempMinutesAfter"
+			],
+			[
+				"func",
+				"function1"
+			],
+			[
+				"cestr",
+				"cestrPlayer"
+			],
+			[
+				"str",
+				"strKeybind"
+			],
+			[
+				"Keyb",
+				"tKeybinds"
+			],
+			[
+				"Get",
+				"GetIndex"
+			],
+			[
+				"CPL",
+				"CPlayerManager"
+			],
+			[
+				"CO",
+				"CObjectManager"
+			],
+			[
+				"inde",
+				"indexAt"
+			],
+			[
+				"curC",
+				"curCardBody"
+			],
+			[
+				"scroll",
+				"scrollable2"
+			],
+			[
+				"wndTim",
+				"wndTimeoutWrong"
+			],
+			[
+				"option",
+				"optionsRadios0"
+			],
+			[
+				"rad",
+				"optionsRadios3"
+			],
+			[
+				"CFac",
+				"CFactionManager"
+			],
+			[
+				"pPL",
+				"pPlayerVehicles"
+			],
+			[
+				"CF",
+				"CFactionManager"
+			],
+			[
+				"CV",
+				"CVehicleManager"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "settings.xml",
+			"settings":
+			{
+				"buffer_size": 80,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/AAAPackageDev/Support/JSON to Property List.sublime-build",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"ssc++",
+				"Set Syntax: C++"
+			],
+			[
+				"SSC++",
+				"Set Syntax: C++"
+			],
+			[
+				"ssc+",
+				"Set Syntax: C++"
+			],
+			[
+				"ssac",
+				"Set Syntax: ActionScript"
+			],
+			[
+				"sc++",
+				"Set Syntax: C++"
+			],
+			[
+				"sstext",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"ss",
+				"Set Syntax: C++"
+			],
+			[
+				"ssp",
+				"Set Syntax: PHP"
+			],
+			[
+				"ssph",
+				"Set Syntax: PHP"
+			],
+			[
+				"sshtm",
+				"Set Syntax: HTML"
+			],
+			[
+				"ssjavas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Add Repository"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"package instl",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"setsyntaxc++",
+				"Set Syntax: C++"
+			],
+			[
+				"ssc",
+				"Set Syntax: C++"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 372.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Jan/LCRP/resources/LCRP/Core/Classes/CVehicle.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Shared/Constants.nut",
+		"/Users/Jan/Desktop/Tätigkeitsnachweise/Tätigkeitsnachweis #?",
+		"/Users/Jan/Desktop/IV-Network/Client/IVCore/Graphics/CMainMenu.cpp",
+		"/Users/Jan/LCRP/resources/LCRP/Main.nut",
+		"/Users/Jan/LCRP/resources/Cardinal/CardinalUI/CardinalUI.au3",
+		"/Users/Jan/LCRP/resources/LCRP/Shared/Utility.nut",
+		"/Users/Jan/LCRP/resources/Cardinal/Shared/CCardinalInterface.nut",
+		"/Users/Jan/LCRP/resources/Cardinal/Core/CCardinal.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Misc/Testing.nut",
+		"/Users/Jan/LCRP/resources/LCRP/meta.xml",
+		"/Users/Jan/LCRP/resources/Cardinal/meta.xml",
+		"/Users/Jan/LCRP/resources/Cardinal/CCardinal.nut",
+		"/Users/Jan/LCRP/settings.xml",
+		"/Users/Jan/LCRP/resources/LCRP/Core/Manager/CEventManager.cpp",
+		"/Users/Jan/LCRP/resources/LCRP/Core/Classes/CServer.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Include/Hooks.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Include/Utility.nut",
+		"/Users/Jan/LCRP/resources/Cardinal/Core/CCardinalInterface.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Include/Constants.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Cardinal/CCardinal.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Cardinal/CardinalUI.au3",
+		"/Users/Jan/LCRP/resources/LCRP/Class/Manager/CInstanceManager.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Class/Manager/CVehicleManager.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Class/Manager/CPlayerManager.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Class/Manager/CObjectManager.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Class/Manager/CMoneyManager.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Class/Manager/CFactionManager.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Class/Manager/CCommandManager.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Class/Classes/CServer.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Include/Commands/PlayerCommands.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Class/EventHandlers/PlayerEvents.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Include/Testing.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Class/Classes/CObject.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Class/Classes/CPlayer.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Class/Classes/CVehicle.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Class/Classes/CFaction.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Include/Authorities.nut",
+		"/Users/Jan/LCRP/resources/LCRP/Include/AlexIstDoof.nut",
+		"/Users/Jan/Desktop/Tätigkeitsnachweise/Tätigkeitsnachweis #?",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/meta.xml",
+		"/W/Users/Jan/AppData/Local/Temp/fz3temp-1/index.html",
+		"/W/Users/Jan/AppData/Local/Temp/fz3temp-1/eatdeck.json",
+		"/W/Users/Jan/AppData/Local/Temp/fz3temp-1/index.php",
+		"/W/Users/Jan/AppData/Local/Temp/fz3temp-1/updatedeck.php",
+		"/W/Users/Jan/AppData/Local/Temp/fz3temp-3/index.html",
+		"/W/Users/Jan/AppData/Local/Temp/fz3temp-3/updatedeck.php",
+		"/W/Users/Jan/AppData/Local/Temp/fz3temp-3/bootstrap.min.css",
+		"/W/Users/Jan/AppData/Local/Temp/fz3temp-1/jquery.js",
+		"/W/Users/Jan/AppData/Local/Temp/fz3temp-2/eatdeck.json",
+		"/W/Users/Jan/AppData/Local/Temp/fz3temp-2/setdeck.php",
+		"/W/Users/Jan/AppData/Local/Temp/fz3temp-2/updatedeck.php",
+		"/W/Users/Jan/AppData/Local/Temp/fz3temp-2/index.html",
+		"/W/Users/Jan/AppData/Local/Temp/fz3temp-1/Gruntfile.js",
+		"/W/Users/Jan/AppData/Local/Temp/fz3temp-1/README.md",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/Classes/CFaction.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/Classes/CObject.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/Classes/CPlayer.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/Classes/CServer.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/Classes/CVehicle.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/Manager/CFactionManager.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/Manager/CInstanceManager.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/Manager/CObjectManager.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/Manager/CPlayerManager.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/Manager/CVehicleManager.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Include/Hooks.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Main.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/CServer.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/CVehicleManager.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/CVehicle.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/CFactionManager.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/CFaction.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/CPlayerManager.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/CPlayer.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/CInstanceManager.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/CObject.nut",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Class/CObjectManager.nut",
+		"/W/Users/Jan/AppData/Roaming/Sublime Text 2/Packages/InsertDate/Default.sublime-keymap",
+		"/W/Users/Jan/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/W/Users/Jan/Desktop/git_lcrp/Squirrel",
+		"/D/Programme/Sublime Text 2/Pristine Packages/C++.sublime-package",
+		"/W/Users/Jan/Desktop/git_lcrp/resources/LCRP/Classes/CFactionManager.nut",
+		"/D/Downloads/AAAPackageDev.sublime-package",
+		"/W/Users/Jan/AppData/Roaming/Sublime Text 3/Packages/User/AAAPackageDev.sublime-package",
+		"/W/Users/Jan/Desktop/git_lcrp/Squirrel.sublime-package",
+		"/W/Users/Jan/AppData/Roaming/Sublime Text 3/Packages/User/Plain text.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Command",
+			"command",
+			"Command",
+			"command",
+			"Command",
+			"command",
+			"Command",
+			"command",
+			"Command",
+			"command",
+			"Command",
+			"command",
+			"Command",
+			"command",
+			"Command",
+			"command",
+			"Command",
+			"command",
+			"Command",
+			"command",
+			"Command",
+			"command",
+			"Command",
+			"currentTime",
+			"tTime",
+			"seconds",
+			"serv:",
+			"getServ",
+			"Faction",
+			"Player",
+			"player",
+			"Player",
+			"player",
+			"Player",
+			"Object",
+			"command",
+			"Command",
+			"command",
+			"Command",
+			"object",
+			"Object",
+			"faction",
+			"Faction",
+			"faction",
+			"Faction",
+			"faction",
+			"Faction",
+			"CFactionManager",
+			"Utility::",
+			"Faction",
+			"faction",
+			"Faction",
+			"Object",
+			"object",
+			"Object",
+			"object",
+			"Object",
+			"CObjectManager",
+			"Faction",
+			"Player",
+			"alert",
+			"scrollableMobile",
+			"flashcards_listMo",
+			"initial",
+			"dff0d8",
+			"print",
+			"Object",
+			"iSolved",
+			"true",
+			"enabled",
+			"200px",
+			"slideFadeToggle",
+			"em",
+			"CPlayerManager",
+			"CObjectManager",
+			"print",
+			"Vehicle",
+			"CVehicle",
+			"m_eVehicle",
+			"CVehicle",
+			"m_ePlayer",
+			"CPlayer",
+			" \n",
+			"*/\n",
+			" \n",
+			"-",
+			"$str"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Object",
+			"CObject",
+			"m_eObject",
+			"CObject",
+			"m_eVehicle",
+			"CVehicle",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "settings.xml",
+					"settings":
+					{
+						"buffer_size": 80,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"LCRP/Class/Manager/CObjectManager.nut"
+			],
+			[
+				"main",
+				"Main.nut"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 202.0,
+	"status_bar_visible": true
+}
