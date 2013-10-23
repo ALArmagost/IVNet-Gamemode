@@ -15,24 +15,14 @@
  *  along with IVNet-Gamemode (OSG).  If not, see <http://www.gnu.org/licenses/>.
  *
  *
- *  @file: Main.nut
- *	@desc: Main file of OSG.
+ *  @file: Constants.nut
+ *	@desc: Contains all constants for OSG
  *	@init-author: Jan Christophersen
  *	@date: 23.10.2013
  */
 
-/*
- *	function Main ()
- *	
- *	Description:
- *		This function is called upon the initialization of OSG.
- *	
- *	Parameter(s):
- *	
- *	Return:
- *		This function returns a bool whether the function succeeded or not.
- */
-function Main ()
-{
-	return true;
-}
+const MODE_NAME_SHORT			=	"OSG";
+const MODE_NAME_LONG			=	"IV:Net Gamemode (OSG)";
+const MODE_VERSION				=	"0.01";
+
+const DEBUG_MODE				=	true;
