@@ -9,4 +9,5 @@ Please make sure to read the contributing guidelines (link tba) in order to cont
 
 Information about the gamemode
 ==============
-OSG will be developed to be a community-made freeroam gamemode. This gamemode is also meant to be a proper example for new squirrel scripters.
+OSG will be developed to be a community-made freeroam gamemode. This gamemode is also meant to be a proper example for new scripters.
+The main developer (Jan/Rukenshia) does only commit squirrel scripts due to lack of Lua knowledge.
