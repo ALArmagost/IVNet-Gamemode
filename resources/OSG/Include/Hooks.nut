@@ -22,7 +22,7 @@
  */
 
 local g_tOriginalFunctions 	= {}; // Table that contains the original functions
-local g_tHooks				= {}; // Table containing the hooks
+//local g_tHooks				= {}; // Table containing the hooks
 
 // Placing the original functions into the table
 g_tOriginalFunctions.print <- print;

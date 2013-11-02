@@ -32,3 +32,12 @@ const LOG_WARNING				=	1;
 const LOG_ERROR					=	2;
 const LOG_SUCCESS				=	3;
 const LOG_NOPREFIX				=	4;
+
+// USER ACCESS LEVELS
+const ACCESS_NONE				=	0; // e.g. unregistered
+const ACCESS_USER				=	1;
+const ACCESS_MOD				=	2;
+const ACCESS_MODERATOR			=	2;
+const ACCESS_SVISOR 			=	3;
+const ACCESS_SUPERVISOR			=	3;
+const ACCESS_DEV				=	42;

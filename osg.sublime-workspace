@@ -91,7 +91,89 @@
 			"file": "settings.xml",
 			"settings":
 			{
-				"buffer_size": 80,
+				"buffer_size": 48,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/OSG/meta.xml",
+			"settings":
+			{
+				"buffer_size": 123,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Jan/Desktop/IV-Network/Build/Release/resources/IncludingResource/meta.xml",
+			"settings":
+			{
+				"buffer_size": 82,
+				"line_ending": "Unix",
+				"name": "<meta>"
+			}
+		},
+		{
+			"file": "/Users/Jan/Desktop/IV-Network/Build/Release/resources/IncludingResource/Main.nut",
+			"settings":
+			{
+				"buffer_size": 32,
+				"line_ending": "Unix",
+				"name": "log(\"IncludingResource loaded?\")"
+			}
+		},
+		{
+			"file": "/Users/Jan/Desktop/IV-Network/Build/Release/resources/IncludedResource/meta.xml",
+			"settings":
+			{
+				"buffer_size": 41,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Jan/Desktop/IV-Network/Build/Release/resources/IncludedResource/Main.nut",
+			"settings":
+			{
+				"buffer_size": 31,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/OSG/Main.nut",
+			"settings":
+			{
+				"buffer_size": 1227,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/OSG/Include/Hooks.nut",
+			"settings":
+			{
+				"buffer_size": 2528,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/OSG/Classes/CPlayer.cpp",
+			"settings":
+			{
+				"buffer_size": 958,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Jan/Desktop/IV-Network/Build/Release/settings.xml",
+			"settings":
+			{
+				"buffer_size": 62,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/OSG/Include/Constants.nut",
+			"settings":
+			{
+				"buffer_size": 1131,
 				"line_ending": "Unix"
 			}
 		}
@@ -103,15 +185,27 @@
 		"selected_items":
 		[
 			[
+				"ssc+",
+				"Set Syntax: C++"
+			],
+			[
 				"ssc++",
 				"Set Syntax: C++"
 			],
 			[
-				"SSC++",
+				"Snippet: os",
+				"Snippet: osgfunc"
+			],
+			[
+				"Snippet: ",
+				"Snippet: CDATA"
+			],
+			[
+				"ssc",
 				"Set Syntax: C++"
 			],
 			[
-				"ssc+",
+				"SSC++",
 				"Set Syntax: C++"
 			],
 			[
@@ -185,13 +279,9 @@
 			[
 				"setsyntaxc++",
 				"Set Syntax: C++"
-			],
-			[
-				"ssc",
-				"Set Syntax: C++"
 			]
 		],
-		"width": 392.0
+		"width": 458.0
 	},
 	"console":
 	{
@@ -208,6 +298,11 @@
 	},
 	"file_history":
 	[
+		"/Users/Jan/Library/Application Support/Sublime Text 2/Packages/User/todo.sublime-snippet",
+		"/Users/Jan/Library/Application Support/Sublime Text 2/Packages/User/osgfunc.sublime-snippet",
+		"/Users/Jan/Library/Application Support/Sublime Text 2/Packages/User/osghead.sublime-snippet",
+		"/Users/Jan/IVNet-Gamemode/resources/OSG/Main.nut",
+		"/Users/Jan/IVNet-Gamemode/settings.xml",
 		"/Users/Jan/LCRP/resources/LCRP/Core/Classes/CVehicle.nut",
 		"/Users/Jan/LCRP/resources/LCRP/Shared/Constants.nut",
 		"/Users/Jan/Desktop/Tätigkeitsnachweise/Tätigkeitsnachweis #?",
@@ -312,6 +407,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" \n",
 			"Command",
 			"command",
 			"Command",
@@ -423,7 +519,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -431,20 +527,287 @@
 					"file": "settings.xml",
 					"settings":
 					{
-						"buffer_size": 80,
+						"buffer_size": 48,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								48,
+								48
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/OSG/meta.xml",
+					"settings":
+					{
+						"buffer_size": 123,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								123,
+								123
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/Jan/Desktop/IV-Network/Build/Release/resources/IncludingResource/meta.xml",
+					"settings":
+					{
+						"buffer_size": 82,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8,
+								8
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<meta>",
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/Jan/Desktop/IV-Network/Build/Release/resources/IncludingResource/Main.nut",
+					"settings":
+					{
+						"buffer_size": 32,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								32
+							]
+						],
+						"settings":
+						{
+							"auto_name": "log(\"IncludingResource loaded?\")",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/Jan/Desktop/IV-Network/Build/Release/resources/IncludedResource/meta.xml",
+					"settings":
+					{
+						"buffer_size": 41,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								41,
+								41
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/Jan/Desktop/IV-Network/Build/Release/resources/IncludedResource/Main.nut",
+					"settings":
+					{
+						"buffer_size": 31,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								31,
+								31
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "resources/OSG/Main.nut",
+					"settings":
+					{
+						"buffer_size": 1227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1159,
+								1159
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "resources/OSG/Include/Hooks.nut",
+					"settings":
+					{
+						"buffer_size": 2528,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1703,
+								1703
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 250.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "resources/OSG/Classes/CPlayer.cpp",
+					"settings":
+					{
+						"buffer_size": 958,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								574,
+								574
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/Users/Jan/Desktop/IV-Network/Build/Release/settings.xml",
+					"settings":
+					{
+						"buffer_size": 62,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								39,
+								39
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "resources/OSG/Include/Constants.nut",
+					"settings":
+					{
+						"buffer_size": 1131,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								758,
+								758
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/C++/C++.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -516,7 +879,7 @@
 		"width": 0.0
 	},
 	"show_minimap": true,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 202.0,
