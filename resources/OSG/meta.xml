@@ -1,6 +1,7 @@
 <meta>     
 	<script src="Include/Constants.nut" />
 	<script src="Include/Hooks.nut" />
+	<script src="Include/Utility.nut" />
 
 	<script src="Classes/CPlayer.nut" />
 	<script src="Main.nut" />

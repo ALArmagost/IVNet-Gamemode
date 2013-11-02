@@ -36,12 +36,11 @@ g_tOriginalFunctions.print <- print;
  *	Parameter(s):
  *		<string>	strMessage	- The message to print
  *		<int>		iPriority	- The Priority of the message (INFO, WARNING or ERROR)
- *		<bool>		bIsDebug	- Indicates a debug message (only printed in DEBUG_MODE)
  *
  *	Return:
  *		The returnvalue of the real print function.
  */
-function print (strMessage, iPriority = 0, bIsDebug = false)
+function print (strMessage, iPriority = 0)
 {
 	switch (iPriority)
 	{
@@ -60,10 +59,7 @@ function print (strMessage, iPriority = 0, bIsDebug = false)
 			strMessage = "[ERROR]   | " + strMessage;
 		break;
 	}                              
-	if ((bIsDebug && DEBUG_MODE) || (!bIsDebug))
-		return g_tOriginalFunctions.print (strMessage);
-	else
-		return false;
+	return g_tOriginalFunctions.print (strMessage);
 } 
 
 /*
@@ -75,10 +71,9 @@ function print (strMessage, iPriority = 0, bIsDebug = false)
  *	Parameter(s):
  *		<string>	strMessage	- The message to print
  *		<int>		iPriority	- The Priority of the message (INFO, WARNING or ERROR)
- *		<bool>		bIsDebug	- Indicates a debug message (only printed in DEBUG_MODE)
  *
  *	Return:
  *		The returnvalue of the real print function.
  */
-function log (strMessage, iPriority = 0, bIsDebug = false)
-	return print (strMessage, iPriority, bIsDebug)
+function log (strMessage, iPriority = 0)
+	return print (strMessage, iPriority)

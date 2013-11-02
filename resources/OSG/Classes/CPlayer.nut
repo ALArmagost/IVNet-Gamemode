@@ -47,7 +47,7 @@ class
 		m_bRegistered	= false;
 		m_bLogged		= false;
 		m_ciCurrentArea	= null;
-		sendMessage("->You initial values have been set.")
+		debug("initialized CPlayerEntity for " + this.getName() + ".");
 	}
 
 	// Adding optional parameters to sendMessage

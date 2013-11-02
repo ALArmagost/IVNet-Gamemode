@@ -15,32 +15,24 @@
  *  along with IVNet-Gamemode (OSG).  If not, see <http://www.gnu.org/licenses/>.
  *
  *
- *  @file: Main.nut
- *	@desc: Main file of OSG.
+ *  @file: Utility.nut
+ *	@desc: Contains "everyday" functions
  *	@init-author: Jan Christophersen
- *	@date: 23.10.2013
+ *	@date: 02.11.2013
  */
-
-local g_strResourceName = MODE_NAME_SHORT;
 
 /*
- *	function Main ()
- *	
+ *	function debug (strMessage)
+ *
  *	Description:
- *		This function is called upon the initialization of OSG.
- *	
+ *		prints out a debug message (if DEBUG_MODE is true)
+ *		
+ *
  *	Parameter(s):
- *	
+ *		<strMessage>	-	The string that will be sent to the console
+ *
  *	Return:
- *		This function returns a bool whether the function succeeded or not.
+ *		boolean that gets returned by the print function if DEBUG_MODE is enabled, false if not.
  */
-function Main (strResourceName)
-{
-	if (strResourceName != g_strResourceName)
-		return false;
-	
-	log(MODE_NAME_LONG + " (version " + MODE_VERSION + ") initialized.", LOG_SUCCESS);
-	debug("Debug mode is active.");
-	return true;
-}
-addEvent("resourceStarted", Main);
+function debug (strMessage)
+	return (DEBUG_MODE) ? print("[DEBUG]   | " + strMessage, 4) : false;
