@@ -21,36 +21,16 @@
  *	@date: 23.10.2013
  */
 
-local g_COriginalClass = CPlayerEntity;
+local _sendMessage = CPlayerEntity.sendMessage;
 
-class 
-	CPlayerEntity extends CPlayerEntity
+function CPlayerEntity::sendMessage(strMessage, xColor = 0xFFFFFF, bFormatting = true)
 {
-	/* WARNING
-	 * This class is really hacky and can break things easily.
-	 * Always be sure about what you're doing.
-	 */
-
-	m_iAccessLevel	= ACCESS_NONE;
-	m_iLevel 		= 0;
-	m_bRegistered	= false;
-	m_bLogged		= false;
-	m_ciCurrentArea	= null;
-
-	function constructor(...)
-	{
-		/*	TODO:
-		 *	-Load data from db or whatever
-		 */
-		m_iAccessLevel	= ACCESS_NONE;
-		m_iLevel 		= 0;
-		m_bRegistered	= false;
-		m_bLogged		= false;
-		m_ciCurrentArea	= null;
-		debug("initialized CPlayerEntity for " + this.getName() + ".");
-	}
-
-	// Adding optional parameters to sendMessage
-	function sendMessage(strMessage, xColor = 0xFFFFFFFF, bColorFormatting = false)
-		g_COriginalClass.sendMessage(strMessage, xColor, bColorFormatting);
+	return _sendMessage(strMessage, xColor, bFormatting);
 }
+
+function onPlayerJoin (enPlayer)
+{
+	enPlayer.sendMessage("Hey, you !");
+	debug("Player " + enPlayer.getName() + " joined " + MODE_NAME_SHORT);
+}
+addEvent("playerJoin", onPlayerJoin);
