@@ -22,6 +22,39 @@
  */
 
 /*
+ *	function onRequestRegistration (enPlayer, strPassword, iGender, iFaction)
+ *
+ *	Description:
+ *		Parses the registration request of a player
+ *
+ *	Parameter(s):
+ *		<instance>	enPlayer	-	the player
+ *		<string>	strPassword	-	the chosen password
+ *		<integer>	iGender		-	the player's gender
+ *		<integer>	iFaction 	-	the chosen faction
+ *
+ *	Return:
+ *		true if the registration request passed, wrong if not.
+ */
+function onRequestRegistration (enPlayer, strPassword, iGender, iFaction)
+{
+	if (!g_PlayerManager.Exists(enPlayer))
+	{
+		log("Player does not exist in CPlayerManager", LOG_WARNING);
+		return false;
+	}
+
+	enPlayer.bRegistered = true;
+
+	/*	TODO:
+	 *	-Auto login
+	 *	-Tutorial (maybe)?
+	 */
+	enPlayer.sendMessage("[TODO] Auto login / Save data etc", 0xFF0000);
+	return true;
+}
+
+/*
  *	function onPlayerJoin (enPlayer)
  *
  *	Description:
@@ -84,3 +117,5 @@ function onPlayerRequestSpawn (enPlayer)
 addEvent("playerJoin", onPlayerJoin);
 addEvent("playerCommand", onPlayerCommand);
 addEvent("playerRequestSpawn", onPlayerRequestSpawn);
+
+addEvent("requestRegistration", onRequestRegistration);

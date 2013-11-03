@@ -26,7 +26,10 @@ if (DEBUG_MODE)
 
 
 g_CommandManager.Add(["register", "reg"], function (enPlayer, aParams) {
-	enPlayer.sendMessage("[TODO] /register")
+	if (aParams.len() != 3)
+		return enPlayer.sendMessage("[TODO]USAGE message");
+
+	return triggerEvent("requestRegistration", enPlayer, aParams [0], aParams [1], aParams [3]);
 });
 
 

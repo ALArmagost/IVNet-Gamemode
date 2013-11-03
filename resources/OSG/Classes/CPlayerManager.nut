@@ -62,10 +62,18 @@ class
 	function Exists (strEnPlayer)
 	{
 		// Can be either the class instance or the player name
-		foreach (i, val in m_tPlayers)
+		if (typeof(strEnPlayer) == "instance")
 		{
-			if (val == strEnPlayer || val.getName() == strEnPlayer)
+			if (m_tPlayers.rawin(strEnPlayer))
 				return true;
+		}
+		else if (typeof(strEnPlayer) == "string")
+		{
+			foreach (i, val in m_tPlayers)
+			{
+				if (val == strEnPlayer || val.getName() == strEnPlayer)
+					return true;
+			}
 		}
 		return false;
 	}
