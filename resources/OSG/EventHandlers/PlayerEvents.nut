@@ -64,4 +64,4 @@ function onPlayerRequestSpawn (enPlayer)
 
 // Register all handlers
 addEvent("playerJoin", onPlayerJoin);
-addEvent("onPlayerRequestSpawn", onPlayerRequestSpawn);
+addEvent("playerRequestSpawn", onPlayerRequestSpawn);
