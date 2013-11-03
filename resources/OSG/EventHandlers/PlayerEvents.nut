@@ -37,5 +37,31 @@
 function onPlayerJoin (enPlayer)
 {
 	debug(enPlayer.getName() + " joined the server. ID: " + enPlayer.getId());
+
+	// Add the player to the manager
+	g_PlayerManager.Add(enPlayer);
+
 	g_PlayerManager.Broadcast(enPlayer.getName() + " joined.");
 }
+
+/*
+ *	function onPlayerRequestSpawn (enPlayer)
+ *
+ *	Description:
+ *		Will be called upon spawn request of player (when he finished loading everything)
+ *
+ *	Parameter(s):
+ *		<instance>	enPlayer	-	the player entity 
+ *
+ *	Return:
+ *		void
+ */
+function onPlayerRequestSpawn (enPlayer)
+{
+	enPlayer.sendMessage("Hey, " + enPlayer.getName() + ". Your current level is " + enPlayer.m_iLevel + ".");
+    enPlayer.spawn(166.187,367.387,15.179,90.0);
+}
+
+// Register all handlers
+addEvent("playerJoin", onPlayerJoin);
+addEvent("onPlayerRequestSpawn", onPlayerRequestSpawn);
