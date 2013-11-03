@@ -15,11 +15,19 @@
  *  along with IVNet-Gamemode (OSG).  If not, see <http://www.gnu.org/licenses/>.
  *
  *
- *  @file: Globals.nut
- *	@desc: contains global variables.
+ *  @file: PlayerCommands.nut
+ *	@desc: contains the player commands
  *	@init-author: Jan Christophersen
  *	@date: 03.11.2013
  */
 
-g_PlayerManager <- CPlayerManager();
-g_CommandManager <- CCommandManager();
+if (DEBUG_MODE)
+{
+
+
+g_CommandManager.Add(["register", "reg"], function (enPlayer, aParams) {
+	enPlayer.sendMessage("[TODO] /register")
+});
+
+
+}

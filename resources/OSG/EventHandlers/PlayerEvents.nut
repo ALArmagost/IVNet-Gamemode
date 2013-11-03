@@ -45,6 +45,24 @@ function onPlayerJoin (enPlayer)
 }
 
 /*
+ *	function onPlayerCommand (enPlayer, strCommand)
+ *
+ *	Description:
+ *		gets called when a player casts a command (/xyz).
+ *
+ *	Parameter(s):
+ *		<instance>	enPlayer	-	the player that calls the command
+ *		<string>	strCommand	-	the command + params. 
+ *
+ *	Return:
+ *		void
+ */
+function onPlayerCommand (enPlayer, strCommand)
+{
+	return g_CommandManager.Handle(enPlayer, strCommand);
+}
+
+/*
  *	function onPlayerRequestSpawn (enPlayer)
  *
  *	Description:
@@ -64,4 +82,5 @@ function onPlayerRequestSpawn (enPlayer)
 
 // Register all handlers
 addEvent("playerJoin", onPlayerJoin);
+addEvent("playerCommand", onPlayerCommand);
 addEvent("playerRequestSpawn", onPlayerRequestSpawn);
