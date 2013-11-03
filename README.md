@@ -9,5 +9,4 @@ Please make sure to read the contributing guidelines (link tba) in order to cont
 
 Information about the gamemode
 ==============
-OSG will be developed to be a community-made freeroam gamemode. This gamemode is also meant to be a proper example for new scripters.
-The main developer (Jan/Rukenshia) does only commit squirrel scripts due to lack of Lua knowledge.
+OSG is meant to be an open gamemode for everyone, easy to implement and easy to modify. The mode itself will feature three factions competing all over the maps, which is divided into several areas which can be captured. 
