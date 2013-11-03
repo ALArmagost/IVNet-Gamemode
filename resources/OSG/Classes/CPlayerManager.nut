@@ -94,3 +94,32 @@ class
  */
 function CPlayerManager::Broadcast (strMessage, xColor = 0xFFFFFF, bFormatting = true)
 	return sendPlayerMessageToAll(strMessage, xColor, bFormatting);
+
+/*
+ *	function CPlayerManager::Get (iStrPlayer)
+ *
+ *	Description:
+ *		Returns the player instance by comparing the id or name.
+ *
+ *	Parameter(s):
+ *		<integer/string>	iStrPlayer	-	the name or id of the player we want to get 
+ *
+ *	Return:
+ *		This function returns the instance of the player or false if there was no matching player.
+ */
+function CPlayerManager::Get (iStrPlayer)
+{
+	// Let's split this function so we wont produce errors
+	if (typeof(iStrPlayer) == "integer")
+	{
+		foreach (i, val in m_tPlayers)
+			if (val.getId() == iStrPlayer) return true;
+	}
+	else if (typeof(iStrPlayer) == "string")
+	{
+		foreach (i, val in m_tPlayers)
+			if (val.getName() == iStrPlayer) return true;
+	}
+
+	return false;
+}
