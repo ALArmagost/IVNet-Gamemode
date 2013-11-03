@@ -21,16 +21,31 @@
  *	@date: 23.10.2013
  */
 
-local _sendMessage = CPlayerEntity.sendMessage;
+// Making a "backup" of the original CPlayerEntity
+local g_COriginalClass = CPlayerEntity; 
 
-function CPlayerEntity::sendMessage(strMessage, xColor = 0xFFFFFF, bFormatting = true)
+class
+	CPlayerEntity extends CPlayerEntity
 {
-	return _sendMessage(strMessage, xColor, bFormatting);
-}
+	/* WARNING
+	 * This class can break things easily since we are modifying
+	 * the class that the server uses.
+	 */
 
-function onPlayerJoin (enPlayer)
-{
-	enPlayer.sendMessage("Hey, you !");
-	debug("Player " + enPlayer.getName() + " joined " + MODE_NAME_SHORT);
+	m_iAccessLevel		=	ACCESS_NONE;
+	m_iFaction			=	FACTION_NONE;
+	m_iExperience		=	0;
+	m_iLevel 			=	0;
+	m_iMoney			=	0;
+
+	m_bRegistered		=	false;
+	m_bLogged			=	true;
+
+	m_tVehicles			=	null; // Has to be defined individually
+	m_tWeapons			=	null; // Has to be defined individually
+	m_tSkills			=	null; // Has to be defined individually
+
+	// Hooks
+	function sendMessage (strMessage, xColor = 0xFFFFFF, bFormatting = true)
+		return g_COriginalClass.sendMessage(strMessage, xColor, bFormatting);
 }
-addEvent("playerJoin", onPlayerJoin);

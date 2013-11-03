@@ -41,6 +41,7 @@ function Main (strResourceName)
 	
 	log(MODE_NAME_LONG + " (version " + MODE_VERSION + ") initialized.", LOG_SUCCESS);
 	debug("Debug mode is active.");
+	g_PlayerManager.Broadcast("Hey");
 	return true;
 }
 addEvent("resourceStarted", Main);

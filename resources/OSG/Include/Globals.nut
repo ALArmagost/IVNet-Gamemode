@@ -15,36 +15,10 @@
  *  along with IVNet-Gamemode (OSG).  If not, see <http://www.gnu.org/licenses/>.
  *
  *
- *  @file: Constants.nut
- *	@desc: Contains all constants for OSG
+ *  @file: Globals.nut
+ *	@desc: contains global variables.
  *	@init-author: Jan Christophersen
- *	@date: 23.10.2013
+ *	@date: 03.11.2013
  */
 
-const MODE_NAME_SHORT			=	"OSG";
-const MODE_NAME_LONG			=	"IV:Net Gamemode (OSG)";
-const MODE_VERSION				=	"0.01";
-
-const DEBUG_MODE				=	1;
-
-const LOG_INFO					=	0;
-const LOG_WARNING				=	1;
-const LOG_ERROR					=	2;
-const LOG_SUCCESS				=	3;
-const LOG_NOPREFIX				=	4;
-
-// USER ACCESS LEVELS
-const ACCESS_NONE				=	0; // e.g. unregistered
-const ACCESS_USER				=	1;
-const ACCESS_MOD				=	2;
-const ACCESS_MODERATOR			=	2;
-const ACCESS_SVISOR 			=	3;
-const ACCESS_SUPERVISOR			=	3;
-const ACCESS_DEV				=	42;
-
-// FACTIONS
-const FACTION_NONE				=	0;
-// still needing names
-const FACTION_TBN1				=	1;
-const FACTION_TBN2				=	2;
-const FACTION_TBN3				=	3; 
+g_PlayerManager <- CPlayerManager();
