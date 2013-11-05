@@ -22,8 +22,11 @@
  */
 
 // Put all Command handlers here
-function _Register (enPlayer, strPassword, iGender, iFaction)
+function _Register (iPlayer, strPassword, iGender, iFaction)
 {
+	// Retreive our player
+	local enPlayer = g_PlayerManager.Get(iPlayer);
+
 	return triggerEvent("requestRegistration", enPlayer, strPassword, iGender, iFaction);
 }
 
