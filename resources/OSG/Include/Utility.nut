@@ -36,3 +36,23 @@
  */
 function debug (strMessage)
 	return (DEBUG_MODE) ? print("[DEBUG]   | " + strMessage, 4) : false;
+
+
+/*
+ *	function USAGE (...)
+ *
+ *	Description:
+ *		Creates a string for command usage.
+ *
+ *	Return:
+ *		This function returns a bool whether the function succeeded or not.
+ */
+function USAGE (...)
+{
+	local strUsage = "";
+
+	foreach(i, val in vargv)
+		strUsage += "[" + val + "] ";
+
+	return strUsage;
+}

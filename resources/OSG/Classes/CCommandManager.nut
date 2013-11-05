@@ -40,7 +40,7 @@ class
 		m_tCommands = {};
 	}
 
-	function Add (strANames, fFunction)
+	function Add (strANames, strAUsage, strFunction)
 	{
 		// Lets check if the command has only one name or multiple first
 		if (typeof(strANames) == "string")
@@ -50,8 +50,19 @@ class
 				log(strANames + " has already a handler.", LOG_ERROR);
 				return false;
 			}
-			m_tCommands [strANames] <- fFunction;
+			m_tCommands [strANames] <- {};
+			m_tCommands [strANames].Handler <- strFunction;
+
+			if (typeof(strAUsage) != "string")
+			{
+				log("Multiple usage messages for one command? (" + strANames + ")", LOG_WARNING);
+				m_tCommands [strANames].Usage <- "/" + strANames + " " + strAUsage [0];
+			}
+			else
+				m_tCommands [strANames].Usage <- "/" + strANames + " " + strAUsage;
+
 			return true;
+
 		}
 		else if (typeof(strANames) == "array")
 		{
@@ -63,7 +74,20 @@ class
 					continue;
 				}
 
-				m_tCommands [val] <- fFunction;
+				m_tCommands [val] <- {};
+				m_tCommands [val].Handler <- strFunction;
+
+				if (typeof(strAUsage) == "string")
+					m_tCommands [val].Usage <- "/" + val + " " + strAUsage;
+				else if (typeof(strAUsage) == "array")
+				{
+					m_tCommands [val].Usage <- "/" + val + " " + strAUsage [i];
+				}
+				else
+				{
+					log("Invalid type for strAUsage in command " + val + ".", LOG_ERROR);
+					return false;
+				}
 			}
 			return true;
 		}
@@ -75,18 +99,74 @@ class
 	function Handle (enPlayer, strCommand)
 	{
 		local cmd = split(strCommand, " ");
-		local varg = {};
-		foreach (i, val in cmd)
-		{
-			if (i == 0)
-				continue;
 
-			varg [i - 1] <- cmd [i];
+		local strCommandName = cmd [0].slice (1, cmd [0].len());
+
+		if (!m_tCommands.rawin(strCommandName))
+		{
+			if (enPlayer == null)
+				debug("Invalid command.")
+			else
+				enPlayer.sendMessage("Invalid command.");
+
+			return false;
 		}
 
-		if(m_tCommands.rawin(cmd [0].slice (1, cmd [0].len())))
-			return m_tCommands [cmd [0].slice (1, cmd [0].len())](enPlayer, varg);
+		local tCommand = m_tCommands [strCommandName];
+		
+		// Create the prototype for our call
+		// You may ask yourself why we are putting the player id into the parameter.
+		// The reason is simple: We can't pass instances/functions/classes via the compilestring function.
+		// So, sadly, we have to retreive the player entity from our player manager in each command.
+		local strCall = "return " + tCommand.Handler
+
+		if (enPlayer == null)
+			strCall += "(null";
 		else
+			strCall += "(" + enPlayer.getId() + "";
+
+		if (cmd.len() > 1)
+		{
+			foreach(i, val in cmd)
+			{
+				if (i == 0)
+					continue;
+
+				if (typeof(val) == "string")
+					strCall += ", \"" + val + "\"";
+				else
+					strCall += ", " + val;
+			}
+		}
+		
+		strCall += ");";
+
+		try 
+		{
+			return compilestring(strCall)();
+		}
+		catch (e)
+		{
+			if (e.find ("argument") != false)
+			{
+				if (enPlayer == null)
+					debug(tCommand.Usage)
+				else
+					enPlayer.sendMessage(tCommand.Usage);
+			}
+			else
+			{
+				log("", LOG_NOPREFIX)
+				log("", LOG_NOPREFIX)
+				log("--------------------------------------------------------------------------------", LOG_NOPREFIX);
+				log("Invalid CommandHandler ? [" + tCommand.Handler + "].", LOG_WARNING);
+				log("Error Message: " + e, LOG_WARNING);
+				log("--------------------------------------------------------------------------------", LOG_NOPREFIX);
+				log("", LOG_NOPREFIX)
+				log("", LOG_NOPREFIX)
+			}
 			return false;
+		}
+
 	}
 }

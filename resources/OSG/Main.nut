@@ -41,6 +41,8 @@ function Main (strResourceName)
 	
 	log(MODE_NAME_LONG + " (version " + MODE_VERSION + ") initialized.", LOG_SUCCESS);
 	debug("Debug mode is active.");
+
+	g_CommandManager.Handle(null, "/register hi 1 ");
 	return true;
 }
 addEvent("resourceStarted", Main);

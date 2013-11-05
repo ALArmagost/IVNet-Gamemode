@@ -21,16 +21,16 @@
  *	@date: 03.11.2013
  */
 
+// Put all Command handlers here
+function _Register (enPlayer, strPassword, iGender, iFaction)
+{
+	return triggerEvent("requestRegistration", enPlayer, strPassword, iGender, iFaction);
+}
+
+
+// Register all Commands here
+// DEBUG commands
 if (DEBUG_MODE)
 {
-
-
-g_CommandManager.Add(["register", "reg"], function (enPlayer, aParams) {
-	if (aParams.len() != 3)
-		return enPlayer.sendMessage("[TODO]USAGE message");
-
-	return triggerEvent("requestRegistration", enPlayer, aParams [0], aParams [1], aParams [3]);
-});
-
-
+	g_CommandManager.Add(["register", "reg"], USAGE("password", "gender(0: male, 1: female)", "faction (1:TB1, 2:TB2, 3:TB3)"), "_Register");
 }
