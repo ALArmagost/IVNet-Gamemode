@@ -42,6 +42,12 @@ class
 	m_tWeapons			=	null; // Has to be defined individually
 	m_tSkills			=	null; // Has to be defined individually
 
+	function constructor()
+	{
+		base.constructor();
+		debug("Im constructing a new player !");
+	}
+
 	// Hooks
 	function sendMessage (strMessage, xColor = 0xFFFFFF, bFormatting = true)
 		return base.sendMessage(strMessage, xColor, bFormatting);
