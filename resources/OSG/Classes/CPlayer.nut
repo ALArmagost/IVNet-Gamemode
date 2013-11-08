@@ -21,9 +21,6 @@
  *	@date: 23.10.2013
  */
 
-// Making a "backup" of the original CPlayerEntity
-local g_COriginalClass = CPlayerEntity; 
-
 class
 	CPlayerEntity extends CPlayerEntity
 {
@@ -47,5 +44,5 @@ class
 
 	// Hooks
 	function sendMessage (strMessage, xColor = 0xFFFFFF, bFormatting = true)
-		return g_COriginalClass.sendMessage(strMessage, xColor, bFormatting);
+		return base.sendMessage(strMessage, xColor, bFormatting);
 }
