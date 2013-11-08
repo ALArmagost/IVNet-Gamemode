@@ -109,8 +109,11 @@ function onPlayerCommand (strCommand, enPlayer)
  */
 function onPlayerRequestSpawn (enPlayer)
 {
-	enPlayer.sendMessage("Hey, " + enPlayer.getName() + ". Your current level is " + enPlayer.m_iLevel + ".");
-    //enPlayer.spawn(166.187,367.387,15.179,90.0);
+	debug("Request");
+	enPlayer.sendMessage("Seems like you want to spawn, huh?");
+	debug("After message");
+    enPlayer.spawn(166.187,367.387,15.179,90.0);
+    debug("After spawn");
 }
 
 // Register all handlers
