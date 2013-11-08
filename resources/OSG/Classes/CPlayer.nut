@@ -29,7 +29,7 @@ class
 	 * the class that the server uses.
 	 */
 
-	/*m_iAccessLevel		=	ACCESS_NONE;
+	m_iAccessLevel		=	ACCESS_NONE;
 	m_iFaction			=	FACTION_NONE;
 	m_iExperience		=	0;
 	m_iLevel 			=	0;
@@ -40,7 +40,7 @@ class
 
 	m_tVehicles			=	null; // Has to be defined individually
 	m_tWeapons			=	null; // Has to be defined individually
-	m_tSkills			=	null; // Has to be defined individually*/
+	m_tSkills			=	null; // Has to be defined individually
 
 	// Hooks
 	function sendMessage (strMessage, xColor = 0xFFFFFF, bFormatting = true)
