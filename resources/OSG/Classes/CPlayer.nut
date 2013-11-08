@@ -45,7 +45,25 @@ class
 	function constructor()
 	{
 		base.constructor();
-		debug("Im constructing a new player !");
+
+		// Reset the vars
+		m_iAccessLevel	=	ACCESS_NONE;
+		m_iFaction		=	FACTION_NONE;
+		m_iExperience	=	0;
+		m_iLevel 		=	0;
+		m_iMoney		=	0;
+
+		m_bRegistered	=	false;
+		m_bLogged		=	true;
+
+		m_tVehicles		=	{}; 
+		m_tWeapons		=	{}; 
+		m_tSkills		=	{}; 
+
+		// Add the player to the manager
+		g_PlayerManager.Add(enPlayer);
+
+		debug("Player constructed.");
 	}
 
 	// Hooks

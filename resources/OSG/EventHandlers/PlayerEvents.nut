@@ -71,9 +71,6 @@ function onPlayerJoin (enPlayer)
 {
 	debug(enPlayer.getName() + " joined the server. ID: " + enPlayer.getId());
 
-	// Add the player to the manager
-	g_PlayerManager.Add(enPlayer);
-
 	g_PlayerManager.Broadcast(enPlayer.getName() + " joined.");
 }
 

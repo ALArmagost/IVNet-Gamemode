@@ -52,11 +52,6 @@ class
 		/*	TODO:
 		 *	-Load from DB/File
 		 */
-
-		// (re)set player vars
-		enPlayer.m_tSkills		= {};
-		enPlayer.m_tVehicles	= {};
-		enPlayer.m_tWeapons		= {};
 	}
 
 	function Exists (strEnPlayer)
