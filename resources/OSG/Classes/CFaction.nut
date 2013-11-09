@@ -70,4 +70,12 @@ class
 		m_tSpawnCoords.fRot = fRot;
 	}
 
+	function Add (enPlayer)
+	{
+		if (m_tMembers.rawin(enPlayer))
+			return false;
+
+		m_tMembers [enPlayer] <- enPlayer;
+	}
+
 }

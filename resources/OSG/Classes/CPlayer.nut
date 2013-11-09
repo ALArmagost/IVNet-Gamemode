@@ -79,9 +79,11 @@ class
 		if (m_cFaction == false)
 			return false;
 
+		m_cFaction.Add(this);
 		/*	TODO:
 		 *	-If faction was something else before, do smth.
 		 */
+
 		return true;
 	}
 }
