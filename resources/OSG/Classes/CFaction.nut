@@ -50,7 +50,7 @@ class
 	function GetName ()
 		return m_strName;
 
-	function SendMessage (strMessage, iColor = -1)
+	function Broadcast (strMessage, iColor = -1)
 	{
 		if (iColor == -1)
 			iColor = m_iColor;
