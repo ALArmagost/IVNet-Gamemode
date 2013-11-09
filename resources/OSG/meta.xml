@@ -3,11 +3,16 @@
 	<script src="Include/Hooks.nut" />
 	<script src="Include/Utility.nut" />
 
+	<script src="Classes/CFaction.nut" />
 	<script src="Classes/CPlayer.nut" />
-	<script src="Classes/CPlayerManager.nut" />
+
 	<script src="Classes/CCommandManager.nut" />
+	<script src="Classes/CFactionManager.nut" />
+	<script src="Classes/CPlayerManager.nut" />
 
 	<script src="Include/Globals.nut" />
+	
+	<script src="Factions/Factions.nut" />
 
 	<script src="EventHandlers/PlayerEvents.nut" />
 
