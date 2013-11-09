@@ -62,9 +62,6 @@ class
 		m_tVehicles		=	{}; 
 		m_tWeapons		=	{}; 
 
-		// Add the player to the manager
-		g_PlayerManager.Add(enPlayer);
-
 		debug("Player constructed.");
 	}
 
