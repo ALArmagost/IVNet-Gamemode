@@ -62,9 +62,6 @@ class
 		m_tVehicles		=	{}; 
 		m_tWeapons		=	{}; 
 
-		// Add the player to the manager
-		g_PlayerManager.Add(enPlayer);
-
 		debug("Player constructed.");
 	}
 
@@ -82,9 +79,11 @@ class
 		if (m_cFaction == false)
 			return false;
 
+		m_cFaction.Add(this);
 		/*	TODO:
 		 *	-If faction was something else before, do smth.
 		 */
+
 		return true;
 	}
 }

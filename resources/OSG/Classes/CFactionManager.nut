@@ -66,7 +66,7 @@ class
 			if (!m_tFactions.rawin(cstrName))
 				return false;
 
-			return m_tFactions [strName];
+			return m_tFactions [cstrName];
 		}
 		return false;
 	}
