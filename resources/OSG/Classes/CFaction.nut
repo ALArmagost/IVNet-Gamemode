@@ -79,3 +79,53 @@ class
 	}
 
 }
+
+/*
+ *	function CFaction::BroadcastEx (aciExceptions, strMessage, iColor = -1)
+ *
+ *	Description:
+ *		Sends a message to all faction members except the players that are in the first parameter.
+ *
+ *	Parameter(s):
+ *		<array/insance>	aciExceptions	-	The player(s) that won't get a message.
+ *		<string>		strMessage		-	The message that should be broadcasted
+ *		<integer>		iColor 			-	The message color. Default is the faction color.
+ *
+ *	Return:
+ *		This function returns a bool whether the function succeeded or not.
+ */
+function CFaction::BroadcastEx (aciExceptions, strMessage, iColor = -1)
+{
+	local tExceptions = {};
+
+	if (typeof(aciExceptions) == "instance")
+		tExceptions [aciExceptions] <- aciExceptions;
+	else if (typeof(aciExceptions) == "array")
+	{
+		foreach (i, val in aciExceptions)
+		{
+			if (typeof(val) != "instance")
+				continue;
+
+			tExceptions [val] <- val;
+		}
+	}
+	else
+	{
+		log("Invalid aciExceptions (" + typeof(aciExceptions) + ") in CFaction::BroadcastEx", LOG_WARNING);
+		return false;
+	}
+
+	if (iColor == -1)
+		iColor == m_iColor;
+
+	foreach (i, val in m_tMembers)
+	{
+		if (tExceptions.rawin(val))
+			continue;
+
+		val.sendMessage(strMessage, iColor, true);
+	}
+
+	return true;
+}

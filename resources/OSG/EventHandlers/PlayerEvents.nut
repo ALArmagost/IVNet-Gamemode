@@ -117,7 +117,7 @@ function onPlayerRequestSpawn (enPlayer)
     }
 
     local ciFaction = enPlayer.GetFaction();
-   	ciFaction.Broadcast(enPlayer.getName() + " logged in.");
+   	ciFaction.BroadcastEx(enPlayer, enPlayer.getName() + " logged in.");
     enPlayer.sendMessage("You are a member of " + ciFaction.GetName() + ".");
     
     enPlayer.spawn(ciFaction.m_tSpawnCoords.fX, ciFaction.m_tSpawnCoords.fY, ciFaction.m_tSpawnCoords.fZ, ciFaction.m_tSpawnCoords.fRot);
