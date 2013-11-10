@@ -15,12 +15,18 @@
  *  along with IVNet-Gamemode (OSG).  If not, see <http://www.gnu.org/licenses/>.
  *
  *
- *  @file: Globals.nut
- *	@desc: contains global variables.
+ *  @file: Factions.nut
+ *	@desc: Contains global information about factions
  *	@init-author: Jan Christophersen
- *	@date: 03.11.2013
+ *	@date: 09.11.2013
  */
 
-g_PlayerManager <- CPlayerManager();
-g_CommandManager <- CCommandManager();
-g_FactionManager <- CFactionManager();
+// Add our Factions, use temp vars
+local f1 = g_FactionManager.Add("FACTION1", 0xFF0000);
+f1.SetSpawnCoordinates(166.187,367.387,15.179,90.0); // TODO
+
+local f2 = g_FactionManager.Add("FACTION2", 0x00FF00);
+f2.SetSpawnCoordinates(166.187,367.387,15.179,90.0); // TODO
+
+local f3 = g_FactionManager.Add("FACTION3", 0x0000FF);
+f3.SetSpawnCoordinates(166.187,367.387,15.179,90.0); // TODO

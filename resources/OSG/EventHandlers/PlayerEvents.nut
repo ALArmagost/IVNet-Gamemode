@@ -72,6 +72,9 @@ function onPlayerJoin (enPlayer)
 	debug(enPlayer.getName() + " joined the server. ID: " + enPlayer.getId());
 
 	g_PlayerManager.Broadcast(enPlayer.getName() + " joined.");
+
+	// Add the player to the manager
+	g_PlayerManager.Add(enPlayer);
 }
 
 /*
@@ -107,7 +110,17 @@ function onPlayerCommand (strCommand, enPlayer)
 function onPlayerRequestSpawn (enPlayer)
 {
 	enPlayer.sendMessage("Hey, " + enPlayer.getName() + ". Your current level is " + enPlayer.m_iLevel + ".");
-    enPlayer.spawn(166.187,367.387,15.179,90.0);
+
+    if (DEBUG_MODE)
+    {
+    	enPlayer.SetFaction("FACTION1");
+    }
+
+    local ciFaction = enPlayer.GetFaction();
+   	ciFaction.Broadcast(enPlayer.getName() + " logged in.");
+    enPlayer.sendMessage("You are a member of " + ciFaction.GetName() + ".");
+    
+    enPlayer.spawn(ciFaction.m_tSpawnCoords.fX, ciFaction.m_tSpawnCoords.fY, ciFaction.m_tSpawnCoords.fZ, ciFaction.m_tSpawnCoords.fRot);
 }
 
 // Register all handlers

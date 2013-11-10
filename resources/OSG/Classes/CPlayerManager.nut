@@ -96,7 +96,7 @@ class
  *		This function returns what sendMessageToAll returns.
  */
 function CPlayerManager::Broadcast (strMessage, xColor = 0xFFFFFF, bFormatting = true)
-	return sendPlayerMessageToAll(strMessage, xColor, bFormatting);
+	return sendMessageToAll(strMessage, xColor, bFormatting);
 
 /*
  *	function CPlayerManager::Get (iStrPlayer)

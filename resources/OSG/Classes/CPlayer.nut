@@ -29,8 +29,9 @@ class
 	 * the class that the server uses.
 	 */
 
+	m_cFaction			=	false;
+
 	m_iAccessLevel		=	ACCESS_NONE;
-	m_iFaction			=	FACTION_NONE;
 	m_iExperience		=	0;
 	m_iLevel 			=	0;
 	m_iMoney			=	0;
@@ -38,17 +39,18 @@ class
 	m_bRegistered		=	false;
 	m_bLogged			=	true;
 
+	m_tSkills			=	null; // Has to be defined individually
 	m_tVehicles			=	null; // Has to be defined individually
 	m_tWeapons			=	null; // Has to be defined individually
-	m_tSkills			=	null; // Has to be defined individually
 
 	function constructor()
 	{
 		base.constructor();
 
 		// Reset the vars
+		m_cFaction		=	false;
+
 		m_iAccessLevel	=	ACCESS_NONE;
-		m_iFaction		=	FACTION_NONE;
 		m_iExperience	=	0;
 		m_iLevel 		=	0;
 		m_iMoney		=	0;
@@ -56,12 +58,9 @@ class
 		m_bRegistered	=	false;
 		m_bLogged		=	true;
 
+		m_tSkills		=	{}; 
 		m_tVehicles		=	{}; 
 		m_tWeapons		=	{}; 
-		m_tSkills		=	{}; 
-
-		// Add the player to the manager
-		g_PlayerManager.Add(enPlayer);
 
 		debug("Player constructed.");
 	}
@@ -69,4 +68,22 @@ class
 	// Hooks
 	function sendMessage (strMessage, xColor = 0xFFFFFF, bFormatting = true)
 		return base.sendMessage(strMessage, xColor, bFormatting);
+
+	function GetFaction ()
+		return m_cFaction;
+
+	function SetFaction (cstrFaction)
+	{
+		m_cFaction = g_FactionManager.Get(cstrFaction);
+
+		if (m_cFaction == false)
+			return false;
+
+		m_cFaction.Add(this);
+		/*	TODO:
+		 *	-If faction was something else before, do smth.
+		 */
+
+		return true;
+	}
 }
