@@ -75,9 +75,17 @@ class
 
 	function Remove (enPlayer)
 	{
-		/*	TODO:
-		 *	-Reset everything
-		 */
+		if (!m_tPlayers.rawin(enPlayer))
+		{
+			log("Undocumented player left ? (" + enPlayer.getName() + ")", LOG_WARNING);
+			return false;
+		}
+
+		// Delete our player from his faction
+		delete enPlayer.GetFaction().m_tMembers [enPlayer];
+
+		// Remove the player from our manager
+		delete m_tPlayers [enPlayer];
 	}
 }
 

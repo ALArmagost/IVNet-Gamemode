@@ -96,6 +96,23 @@ function onPlayerCommand (strCommand, enPlayer)
 }
 
 /*
+ *	function onPlayerDisconnect (enPlayer)
+ *
+ *	Description:
+ *		Gets called when the player leaves OSG
+ *
+ *	Parameter(s):
+ *		<instance>	enPlayer	-	the player entity 
+ *
+ *	Return:
+ *		void
+ */
+function onPlayerDisconnect (enPlayer)
+{
+	g_PlayerManager.Remove(enPlayer);
+}
+
+/*
  *	function onPlayerRequestSpawn (enPlayer)
  *
  *	Description:
@@ -126,6 +143,7 @@ function onPlayerRequestSpawn (enPlayer)
 // Register all handlers
 addEvent("playerJoin", onPlayerJoin);
 addEvent("playerCommand", onPlayerCommand);
+addEvent("playerDisconnect", onPlayerDisconnect);
 addEvent("playerRequestSpawn", onPlayerRequestSpawn);
 
 addEvent("requestRegistration", onRequestRegistration);
