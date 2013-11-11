@@ -49,9 +49,19 @@ class
 		if (Exists(enPlayer))
 			return false;
 
-		/*	TODO:
-		 *	-Load from DB/File
-		 */
+		m_tPlayers [enPlayer] <- enPlayer;
+
+		// If you're asking yourself why we are not loading the player data in CPlayerEntity::construction:
+		// We want the player to be registered into our manager first and then load him.
+		if (!enPlayer.Load())
+		{
+			// Something really went wrong.
+			log("Could not load " + enPlayer.getName() + "'s data.", LOG_ERROR)
+
+			/*	TODO:
+			 *	-Check MySQL / whatever connection to make sure we're still connected to our database
+			 */
+		}
 	}
 
 	function Exists (strEnPlayer)

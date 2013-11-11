@@ -32,6 +32,7 @@ function _Register (iPlayer, strPassword, iGender, iFaction)
 
 
 // Register all Commands here
+
 // DEBUG commands
 if (DEBUG_MODE)
 {

@@ -21,6 +21,7 @@
  *	@date: 09.11.2013
  */
 
+// Put small functions into the class definition
 class
 	CFaction
 {
@@ -44,11 +45,13 @@ class
 
 	}
 
-	function GetMembers ()
-		return m_tMembers;
+	function Add (enPlayer)
+	{
+		if (m_tMembers.rawin(enPlayer))
+			return false;
 
-	function GetName ()
-		return m_strName;
+		m_tMembers [enPlayer] <- enPlayer;
+	}
 
 	function Broadcast (strMessage, iColor = -1)
 	{
@@ -62,6 +65,20 @@ class
 		return true;
 	}
 
+	function GetMembers ()
+		return m_tMembers;
+
+	function GetName ()
+		return m_strName;
+
+	function Remove (enPlayer)
+	{
+		if (!m_tMembers.rawin(enPlayer))
+			return false;
+
+		delete m_tMembers [enPlayer];
+	}
+
 	function SetSpawnCoordinates (fX, fY, fZ, fRot = 0.0)
 	{
 		m_tSpawnCoords.fX = fX;
@@ -70,15 +87,9 @@ class
 		m_tSpawnCoords.fRot = fRot;
 	}
 
-	function Add (enPlayer)
-	{
-		if (m_tMembers.rawin(enPlayer))
-			return false;
-
-		m_tMembers [enPlayer] <- enPlayer;
-	}
-
 }
+
+// Put functions that take many lines and/or need documentation here
 
 /*
  *	function CFaction::BroadcastEx (aciExceptions, strMessage, iColor = -1)
