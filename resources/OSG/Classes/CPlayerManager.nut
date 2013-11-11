@@ -61,7 +61,9 @@ class
 			/*	TODO:
 			 *	-Check MySQL / whatever connection to make sure we're still connected to our database
 			 */
+			return false;
 		}
+		return true;
 	}
 
 	function Exists (strEnPlayer)

@@ -32,7 +32,7 @@ class
 	m_bLoaded			=	false;
 	m_bLogged			=	true;
 	m_bRegistered		=	false;
-	m_cFaction			=	false;
+	m_ciFaction			=	false;
 	m_iAccessLevel		=	ACCESS_NONE;
 	m_iExperience		=	0;
 	m_iLevel 			=	0;
@@ -49,7 +49,7 @@ class
 		m_bLoaded			=	false;
 		m_bLogged			=	true;
 		m_bRegistered		=	false;
-		m_cFaction			=	false;
+		m_ciFaction			=	false;
 		m_iAccessLevel		=	ACCESS_NONE;
 		m_iExperience		=	0;
 		m_iLevel 			=	0;
@@ -66,7 +66,7 @@ class
 		return base.sendMessage(strMessage, xColor, bFormatting);
 
 	function GetFaction ()
-		return m_cFaction;
+		return m_ciFaction;
 
 	function Load ()
 	{
@@ -84,12 +84,12 @@ class
 
 	function SetFaction (cstrFaction)
 	{
-		m_cFaction = g_FactionManager.Get(cstrFaction);
+		m_ciFaction = g_FactionManager.Get(cstrFaction);
 
-		if (m_cFaction == false)
+		if (m_ciFaction == false)
 			return false;
 
-		m_cFaction.Add(this);
+		m_ciFaction.Add(this);
 		/*	TODO:
 		 *	-If faction was something else before, do smth.
 		 */
