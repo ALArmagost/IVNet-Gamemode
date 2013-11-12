@@ -5,10 +5,12 @@
 
 	<script src="Classes/CFaction.nut" />
 	<script src="Classes/CPlayer.nut" />
+	<script src="Classes/CVehicle.nut" />
 
 	<script src="Classes/CCommandManager.nut" />
 	<script src="Classes/CFactionManager.nut" />
 	<script src="Classes/CPlayerManager.nut" />
+	<script src="Classes/CVehicleManager.nut" />
 
 	<script src="Include/Globals.nut" />
 	

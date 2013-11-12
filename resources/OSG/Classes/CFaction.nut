@@ -21,6 +21,7 @@
  *	@date: 09.11.2013
  */
 
+// Put small functions into the class definition
 class
 	CFaction
 {
@@ -44,11 +45,13 @@ class
 
 	}
 
-	function GetMembers ()
-		return m_tMembers;
+	function Add (enPlayer)
+	{
+		if (m_tMembers.rawin(enPlayer))
+			return false;
 
-	function GetName ()
-		return m_strName;
+		m_tMembers [enPlayer] <- enPlayer;
+	}
 
 	function Broadcast (strMessage, iColor = -1)
 	{
@@ -62,6 +65,20 @@ class
 		return true;
 	}
 
+	function GetMembers ()
+		return m_tMembers;
+
+	function GetName ()
+		return m_strName;
+
+	function Remove (enPlayer)
+	{
+		if (!m_tMembers.rawin(enPlayer))
+			return false;
+
+		delete m_tMembers [enPlayer];
+	}
+
 	function SetSpawnCoordinates (fX, fY, fZ, fRot = 0.0)
 	{
 		m_tSpawnCoords.fX = fX;
@@ -70,12 +87,56 @@ class
 		m_tSpawnCoords.fRot = fRot;
 	}
 
-	function Add (enPlayer)
-	{
-		if (m_tMembers.rawin(enPlayer))
-			return false;
+}
 
-		m_tMembers [enPlayer] <- enPlayer;
+// Put functions that take many lines and/or need documentation here
+
+/*
+ *	function CFaction::BroadcastEx (aciExceptions, strMessage, iColor = -1)
+ *
+ *	Description:
+ *		Sends a message to all faction members except the players that are in the first parameter.
+ *
+ *	Parameter(s):
+ *		<array/insance>	aciExceptions	-	The player(s) that won't get a message.
+ *		<string>		strMessage		-	The message that should be broadcasted
+ *		<integer>		iColor 			-	The message color. Default is the faction color.
+ *
+ *	Return:
+ *		This function returns a bool whether the function succeeded or not.
+ */
+function CFaction::BroadcastEx (aciExceptions, strMessage, iColor = -1)
+{
+	local tExceptions = {};
+
+	if (typeof(aciExceptions) == "instance")
+		tExceptions [aciExceptions] <- aciExceptions;
+	else if (typeof(aciExceptions) == "array")
+	{
+		foreach (i, val in aciExceptions)
+		{
+			if (typeof(val) != "instance")
+				continue;
+
+			tExceptions [val] <- val;
+		}
+	}
+	else
+	{
+		log("Invalid aciExceptions (" + typeof(aciExceptions) + ") in CFaction::BroadcastEx", LOG_WARNING);
+		return false;
 	}
 
+	if (iColor == -1)
+		iColor == m_iColor;
+
+	foreach (i, val in m_tMembers)
+	{
+		if (tExceptions.rawin(val))
+			continue;
+
+		val.sendMessage(strMessage, iColor, true);
+	}
+
+	return true;
 }

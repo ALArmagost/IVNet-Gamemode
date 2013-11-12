@@ -37,6 +37,29 @@
 function debug (strMessage)
 	return (DEBUG_MODE) ? print("[DEBUG]   | " + strMessage, 4) : false;
 
+/*
+ *	function unknownPlayerMessage
+ *
+ *	Description:
+ *		Outputs a string to the server console and returns false.
+ *
+ *	Parameter(s):
+ *		<instance>	enPlayer	-	the player that is not known to the player manager 
+ *		<string>	strFunc		-	the function name.
+ *
+ *	Return:
+ *		(bool) false.
+ */
+function unknownPlayerMessage (enPlayer, strFunc = null)
+{
+	local strSuffix = ".";
+
+	if (strFunc != null)
+		strFunc = " in " + strFunc + ".";
+
+	log("unknown player to CPlayerManager: " + enPlayer.getName() + " (serial: [TODO])" + strFunc, LOG_WARNING);
+	return false;
+}
 
 /*
  *	function USAGE (...)

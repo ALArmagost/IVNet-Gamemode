@@ -29,16 +29,15 @@ class
 	 * the class that the server uses.
 	 */
 
-	m_cFaction			=	false;
-
+	m_bFirstSpawn		=	true;
+	m_bLoaded			=	false;
+	m_bLogged			=	true;
+	m_bRegistered		=	false;
+	m_ciFaction			=	false;
 	m_iAccessLevel		=	ACCESS_NONE;
 	m_iExperience		=	0;
 	m_iLevel 			=	0;
 	m_iMoney			=	0;
-
-	m_bRegistered		=	false;
-	m_bLogged			=	true;
-
 	m_tSkills			=	null; // Has to be defined individually
 	m_tVehicles			=	null; // Has to be defined individually
 	m_tWeapons			=	null; // Has to be defined individually
@@ -48,19 +47,18 @@ class
 		base.constructor();
 
 		// Reset the vars
-		m_cFaction		=	false;
-
-		m_iAccessLevel	=	ACCESS_NONE;
-		m_iExperience	=	0;
-		m_iLevel 		=	0;
-		m_iMoney		=	0;
-
-		m_bRegistered	=	false;
-		m_bLogged		=	true;
-
-		m_tSkills		=	{}; 
-		m_tVehicles		=	{}; 
-		m_tWeapons		=	{}; 
+		m_bFirstSpawn		=	true;
+		m_bLoaded			=	false;
+		m_bLogged			=	true;
+		m_bRegistered		=	false;
+		m_ciFaction			=	false;
+		m_iAccessLevel		=	ACCESS_NONE;
+		m_iExperience		=	0;
+		m_iLevel 			=	0;
+		m_iMoney			=	0;
+		m_tSkills			=	{}; 
+		m_tVehicles			=	{}; 
+		m_tWeapons			=	{}; 
 
 		debug("Player constructed.");
 	}
@@ -70,16 +68,30 @@ class
 		return base.sendMessage(strMessage, xColor, bFormatting);
 
 	function GetFaction ()
-		return m_cFaction;
+		return m_ciFaction;
+
+	function Load ()
+	{
+		if (m_bLoaded)
+			return false;
+
+		/*	TODO:
+		 *	-Load Player data from DB or whatever system we'll use
+		 *	-Suggestion: Use JSON for weapons, skills, vehicles, ...
+		 */
+
+		m_bLoaded = true;
+		return true;
+	}
 
 	function SetFaction (cstrFaction)
 	{
-		m_cFaction = g_FactionManager.Get(cstrFaction);
+		m_ciFaction = g_FactionManager.Get(cstrFaction);
 
-		if (m_cFaction == false)
+		if (m_ciFaction == false)
 			return false;
 
-		m_cFaction.Add(this);
+		m_ciFaction.Add(this);
 		/*	TODO:
 		 *	-If faction was something else before, do smth.
 		 */

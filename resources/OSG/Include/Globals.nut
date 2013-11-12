@@ -21,6 +21,7 @@
  *	@date: 03.11.2013
  */
 
-g_PlayerManager <- CPlayerManager();
-g_CommandManager <- CCommandManager();
-g_FactionManager <- CFactionManager();
+g_CommandManager 	<- 	CCommandManager();
+g_FactionManager 	<- 	CFactionManager();
+g_PlayerManager 	<- 	CPlayerManager();
+g_VehicleManager 	<- 	CVehicleManager();
