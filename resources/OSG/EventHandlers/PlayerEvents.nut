@@ -137,6 +137,8 @@ function onPlayerRequestSpawn (enPlayer)
 	if (!g_PlayerManager.Exists(enPlayer))
 		return unknownPlayerMessage(enPlayer);
 
+	local ciFaction = enPlayer.GetFaction();
+
 	if (enPlayer.m_bFirstSpawn)
 	{
 		enPlayer.sendMessage("Hey, " + enPlayer.getName() + ". Your current level is " + enPlayer.m_iLevel + ".");
@@ -144,9 +146,9 @@ function onPlayerRequestSpawn (enPlayer)
 	    if (DEBUG_MODE)
 	    {
 	    	enPlayer.SetFaction("FACTION1");
+	    	ciFaction = enPlayer.GetFaction(); // refresh the variable
 	    }
 
-	    local ciFaction = enPlayer.GetFaction();
 	   	ciFaction.BroadcastEx(enPlayer, enPlayer.getName() + " logged in.");
 	    enPlayer.sendMessage("You are a member of " + ciFaction.GetName() + ".");
 
