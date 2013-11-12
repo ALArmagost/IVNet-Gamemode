@@ -46,6 +46,8 @@ function Main (strResourceName)
 	{
 		// Example for a bad command
 		g_CommandManager.Handle(null, "/register hi 1 ");
+
+		g_VehicleManager.Create(90, -1712.246704, 363.175751, 25.448986, 0.0);
 	}
 	return true;
 }
