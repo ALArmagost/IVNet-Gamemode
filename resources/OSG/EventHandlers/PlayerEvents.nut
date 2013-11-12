@@ -150,7 +150,7 @@ function onPlayerRequestSpawn (enPlayer)
 	   	ciFaction.BroadcastEx(enPlayer, enPlayer.getName() + " logged in.");
 	    enPlayer.sendMessage("You are a member of " + ciFaction.GetName() + ".");
 
-	    m_bFirstSpawn = false;
+	    enPlayer.m_bFirstSpawn = false;
 	}
     
     /*	TODO:
