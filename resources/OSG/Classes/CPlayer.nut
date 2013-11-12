@@ -29,6 +29,7 @@ class
 	 * the class that the server uses.
 	 */
 
+	m_bFirstSpawn		=	true;
 	m_bLoaded			=	false;
 	m_bLogged			=	true;
 	m_bRegistered		=	false;
@@ -46,6 +47,7 @@ class
 		base.constructor();
 
 		// Reset the vars
+		m_bFirstSpawn		=	true;
 		m_bLoaded			=	false;
 		m_bLogged			=	true;
 		m_bRegistered		=	false;

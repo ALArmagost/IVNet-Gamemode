@@ -23,10 +23,10 @@
 
 // Add our Factions, use temp vars
 local f1 = g_FactionManager.Add("FACTION1", 0xFF0000);
-f1.SetSpawnCoordinates(166.187,367.387,15.179,90.0); // TODO
+f1.SetSpawnCoordinates(-1712.246704, 359.175751, 25.448986, 0.0); // [by Patrick] - the lost
 
 local f2 = g_FactionManager.Add("FACTION2", 0x00FF00);
-f2.SetSpawnCoordinates(166.187,367.387,15.179,90.0); // TODO
+f2.SetSpawnCoordinates(-1246.056396, 1070.941406, 19.729691, 0.0); // [by Patrick] - yakuza
 
 local f3 = g_FactionManager.Add("FACTION3", 0x0000FF);
-f3.SetSpawnCoordinates(166.187,367.387,15.179,90.0); // TODO
+f3.SetSpawnCoordinates(-1219.142090, 14.342171, 4.311533, 0.0); // [by Patrick] - hafen

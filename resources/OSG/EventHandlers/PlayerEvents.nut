@@ -71,10 +71,12 @@ function onPlayerJoin (enPlayer)
 {
 	debug(enPlayer.getName() + " joined the server. ID: " + enPlayer.getId());
 
-	g_PlayerManager.Broadcast(enPlayer.getName() + " joined.");
-
 	// Add the player to the manager
 	g_PlayerManager.Add(enPlayer);
+
+	// Check if the Add method really succeeded
+	if (!g_PlayerManager.Exists(enPlayer) && enPlayer.m_bLoaded)
+		return unknownPlayerMessage(enPlayer);
 }
 
 /*
@@ -92,6 +94,9 @@ function onPlayerJoin (enPlayer)
  */
 function onPlayerCommand (strCommand, enPlayer)
 {
+	if (!g_PlayerManager.Exists(enPlayer))
+		return unknownPlayerMessage(enPlayer);
+
 	return g_CommandManager.Handle(enPlayer, strCommand);
 }
 
@@ -109,6 +114,9 @@ function onPlayerCommand (strCommand, enPlayer)
  */
 function onPlayerDisconnect (enPlayer)
 {
+	if (!g_PlayerManager.Exists(enPlayer))
+		return unknownPlayerMessage(enPlayer);
+
 	g_PlayerManager.Remove(enPlayer);
 }
 
@@ -126,17 +134,28 @@ function onPlayerDisconnect (enPlayer)
  */
 function onPlayerRequestSpawn (enPlayer)
 {
-	enPlayer.sendMessage("Hey, " + enPlayer.getName() + ". Your current level is " + enPlayer.m_iLevel + ".");
+	if (!g_PlayerManager.Exists(enPlayer))
+		return unknownPlayerMessage(enPlayer);
 
-    if (DEBUG_MODE)
-    {
-    	enPlayer.SetFaction("FACTION1");
-    }
+	if (enPlayer.m_bFirstSpawn)
+	{
+		enPlayer.sendMessage("Hey, " + enPlayer.getName() + ". Your current level is " + enPlayer.m_iLevel + ".");
 
-    local ciFaction = enPlayer.GetFaction();
-   	ciFaction.BroadcastEx(enPlayer, enPlayer.getName() + " logged in.");
-    enPlayer.sendMessage("You are a member of " + ciFaction.GetName() + ".");
+	    if (DEBUG_MODE)
+	    {
+	    	enPlayer.SetFaction("FACTION1");
+	    }
+
+	    local ciFaction = enPlayer.GetFaction();
+	   	ciFaction.BroadcastEx(enPlayer, enPlayer.getName() + " logged in.");
+	    enPlayer.sendMessage("You are a member of " + ciFaction.GetName() + ".");
+
+	    m_bFirstSpawn = false;
+	}
     
+    /*	TODO:
+     *	-Reset vars etc. ( Dont forget the client :-) )
+     */
     enPlayer.spawn(ciFaction.m_tSpawnCoords.fX, ciFaction.m_tSpawnCoords.fY, ciFaction.m_tSpawnCoords.fZ, ciFaction.m_tSpawnCoords.fRot);
 }
 
