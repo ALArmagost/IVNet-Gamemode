@@ -47,6 +47,14 @@ class
 	function Create (iModel, fX, fY, fZ, fRot = 0.0, iColor1 = 0, iColor2 = 0, iColor3 = 0, iColor4 = 0, iColor5 = 0)
 	{
 		m_tVehicles [m_tVehicles.len()] <- createVehicle (iModel, fX, fY, fZ, fRot, iColor1, iColor2, iColor3, iColor4, iColor5);
+
+		if (DEBUG_MODE)
+		{
+			/*	TODO:
+			 *	-Engine Command (hotkey via client)
+			 */
+			m_tVehicles [m_tVehicles.len() - 1].setEngine(true);
+		}
 	}
 
 	function Exists (enVehicle)
