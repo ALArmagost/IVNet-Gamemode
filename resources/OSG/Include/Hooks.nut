@@ -21,6 +21,73 @@
  *	@date: 23.10..2013
  */
 
+/*
+ *	function handleError (strMessage)
+ *
+ *	Description:
+ *		Custom error handler
+ *
+ *	Parameter(s):
+ *		<string>	strMessage	-	the error message
+ *
+ *	Return:
+ *		void
+ */
+function handleError (strMessage)
+{
+	log("", LOG_NOPREFIX);
+	log("-----------------------------------[ERROR]--------------------------------------", LOG_NOPREFIX);
+	log("ERROR MESSAGE: " + strMessage, LOG_NOPREFIX);
+	log("", LOG_NOPREFIX)
+
+	local i = 2;
+	local sinfo = getstackinfos(i);
+
+	if (sinfo.func == "assert")
+	{
+		i++;
+		sinfo = getstackinfos(i); // Kill the assert info
+	}
+
+	if (sinfo.src == "NATIVE")
+		sinfo.src = "native function";
+	log("FUNCTION: " + sinfo.func + ", line " + sinfo.line, LOG_NOPREFIX);
+	log("FILE: " + sinfo.src, LOG_NOPREFIX);
+	log("", LOG_NOPREFIX);
+	log("LOCALS:", LOG_NOPREFIX);
+	local strLocals = "";
+	local strCallstack = "";
+	while (sinfo != null)
+	{
+		sinfo = getstackinfos(i);
+		i++;
+
+		if (sinfo == null)
+			break;
+
+		foreach (i2, val in sinfo.locals)
+		{
+			if(i2 == "this")
+				continue;
+
+
+			strLocals += "	[" + i2 + "]: " + val + "\n";
+		}
+
+		if (sinfo.src.find(MODE_NAME_SHORT) != null)
+			sinfo.src = sinfo.src.slice(sinfo.src.find(MODE_NAME_SHORT) + MODE_NAME_SHORT.len(), sinfo.src.len());
+		if (sinfo.func == "NATIVE")
+			strCallstack += "-- NATIVE CALL --\n";
+		else
+			strCallstack += "	" + sinfo.func + " [line " + sinfo.line + ", " + sinfo.src + "]\n";
+	}
+	log(strLocals, LOG_NOPREFIX);
+	log("CALLSTACK:", LOG_NOPREFIX);
+	log(strCallstack, LOG_NOPREFIX);
+	log("---------------------------------[ERROR END]------------------------------------", LOG_NOPREFIX);
+}
+seterrorhandler(handleError);
+
 local g_tOriginalFunctions 	= {}; // Table that contains the original functions
 //local g_tHooks				= {}; // Table containing the hooks
 
