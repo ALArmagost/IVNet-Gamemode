@@ -40,7 +40,7 @@ function Main (strResourceName)
 		return false;
 
 	// Load everything
-	g_FactionManager.Load();
+	assert(g_FactionManager.Load(), "could not load factions");
 	
 	log(MODE_NAME_LONG + " (version " + MODE_VERSION + ") initialized.", LOG_SUCCESS);
 	debug("Debug mode is active.");
@@ -52,6 +52,7 @@ function Main (strResourceName)
 
 		g_VehicleManager.Create(90, -1712.246704, 363.175751, 25.448986, 0.0);
 	}
+
 	return true;
 }
 addEvent("resourceStarted", Main);

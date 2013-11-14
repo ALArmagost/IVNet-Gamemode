@@ -25,7 +25,8 @@ local g_tOriginalFunctions 	= {}; // Table that contains the original functions
 //local g_tHooks				= {}; // Table containing the hooks
 
 // Placing the original functions into the table
-g_tOriginalFunctions.print <- print;
+g_tOriginalFunctions.print 			<- 	print;
+g_tOriginalFunctions.assert 		<- 	assert;
 
 /*
  *	function print (strMessage, iPriority = 0, bIsDebug = false)
@@ -77,3 +78,22 @@ function print (strMessage, iPriority = 0)
  */
 function log (strMessage, iPriority = 0)
 	return print (strMessage, iPriority)
+
+/*
+ *	function assert (expression, strMessage)
+ *
+ *	Description:
+ *		throws exception strMessage when the assert fails.
+ *
+ *	Parameter(s):
+ *		<expression>	expression	- 	the expression to assert
+ *		<string>		strMessage	-	the error message to be thrown
+ *
+ *	Return:
+ *		void
+ */
+function assert(expression, strMessage)
+{
+	if (!expression)
+		throw(strMessage)
+}
