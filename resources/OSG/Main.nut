@@ -38,6 +38,9 @@ function Main (strResourceName)
 {
 	if (strResourceName != g_strResourceName)
 		return false;
+
+	// Load everything
+	g_FactionManager.Load();
 	
 	log(MODE_NAME_LONG + " (version " + MODE_VERSION + ") initialized.", LOG_SUCCESS);
 	debug("Debug mode is active.");

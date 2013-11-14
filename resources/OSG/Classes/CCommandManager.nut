@@ -147,7 +147,7 @@ class
 		}
 		catch (e)
 		{
-			if (e.find ("argument") != false)
+			if (e.find("wrong number of parameters") != null)
 			{
 				if (enPlayer == null)
 					debug(tCommand.Usage)
@@ -155,16 +155,7 @@ class
 					enPlayer.sendMessage(tCommand.Usage);
 			}
 			else
-			{
-				log("", LOG_NOPREFIX)
-				log("", LOG_NOPREFIX)
-				log("--------------------------------------------------------------------------------", LOG_NOPREFIX);
-				log("Invalid CommandHandler ? [" + tCommand.Handler + "].", LOG_WARNING);
-				log("Error Message: " + e, LOG_WARNING);
-				log("--------------------------------------------------------------------------------", LOG_NOPREFIX);
-				log("", LOG_NOPREFIX)
-				log("", LOG_NOPREFIX)
-			}
+				throw(e);
 			return false;
 		}
 

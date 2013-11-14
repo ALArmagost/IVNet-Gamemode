@@ -28,15 +28,22 @@ class
 {
 
 	// Variables
+	m_bLoaded		=	false;
 	m_tFactions		=	{};
 
-	function constructor ()
+	function constructor (bLoadFactions = true)
 	{
 		if (m_Instance != null)
 			return log("CFactionManager was initialized earlier.", LOG_WARNING);
 
-		m_Instance 		= this;
-		m_tFactions 	= {};
+		m_Instance 		=	this;
+		m_bLoaded 		=	false;
+		m_tFactions 	=	{};
+
+		if (bLoadFactions)
+			return Load();
+
+		return true;
 	}
 
 	function GetFactions()
@@ -71,4 +78,22 @@ class
 		return false;
 	}
 
+}
+
+/*
+ *	function CFactionManager::Load ()
+ *
+ *	Description:
+ *		Loads all factions from our database
+ *
+ *
+ *	Return:
+ *		This function returns a bool whether the function succeeded or not.
+ */
+function CFactionManager::Load ()
+{
+	/*	TODO:
+	 *	-MySQL stuff
+	 */
+	return tempLoadFactions();
 }

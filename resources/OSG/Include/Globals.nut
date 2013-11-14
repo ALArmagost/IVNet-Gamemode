@@ -22,6 +22,6 @@
  */
 
 g_CommandManager 	<- 	CCommandManager();
-g_FactionManager 	<- 	CFactionManager();
+g_FactionManager 	<- 	CFactionManager(false); // TODO
 g_PlayerManager 	<- 	CPlayerManager();
 g_VehicleManager 	<- 	CVehicleManager();
