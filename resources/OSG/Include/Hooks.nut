@@ -49,6 +49,9 @@ function handleError (strMessage)
 		sinfo = getstackinfos(i); // Kill the assert info
 	}
 
+	if (sinfo.src.find(MODE_NAME_SHORT) != null)
+		sinfo.src = sinfo.src.slice(sinfo.src.find(MODE_NAME_SHORT) + MODE_NAME_SHORT.len(), sinfo.src.len());
+
 	if (sinfo.src == "NATIVE")
 		sinfo.src = "native function";
 	log("FUNCTION: " + sinfo.func + ", line " + sinfo.line, LOG_NOPREFIX);
